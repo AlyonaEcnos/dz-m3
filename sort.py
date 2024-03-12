@@ -6,7 +6,6 @@ from pathlib import Path
 import threading
 import logging
 
-# Установка логирования
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -125,7 +124,6 @@ def sort_folder(root_path: Path, path: Path):
             threads.append(thread)
             thread.start()
 
-    # Wait for all threads to finish
     for thread in threads:
         thread.join()
 
